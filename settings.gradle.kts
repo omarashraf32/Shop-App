@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "mock Shope App"
 include(":app")
- 
+include(":data")
+include(":domain")
