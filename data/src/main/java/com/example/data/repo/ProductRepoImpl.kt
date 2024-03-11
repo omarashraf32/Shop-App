@@ -5,5 +5,5 @@ import com.example.domain.model.CategoryResponse
 import com.example.domain.repo.ProductsRepo
 
 class ProductRepoImpl(private val apiService: ApiService): ProductsRepo {
-    override fun getProductFromRemote(): CategoryResponse = apiService.getProduct()
+    override suspend fun getProductFromRemote(): CategoryResponse = apiService.getProduct()
 }

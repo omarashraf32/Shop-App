@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.domain.model.CategoryResponseItem
 import com.example.mockshopeapp.databinding.CategoryItemBinding
+import com.example.mockshopeapp.ui.productsList.ProductListFragment
 
-class MealsAdapter() : ListAdapter<CategoryResponseItem, MealsAdapter.ViewHolder>(CategoryDiffCallback()) {
+class ProductAdapter(productListFragment: ProductListFragment) : ListAdapter<CategoryResponseItem, ProductAdapter.ViewHolder>(CategoryDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding = CategoryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
