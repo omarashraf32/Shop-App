@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.mockshopeapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.mockshopeapp"
@@ -55,8 +55,6 @@ dependencies {
     //Gson
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.code.gson:gson:2.9.0")
-    // Retrofit with RX Java
-    implementation ("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
     //Retrofit Interceptors + OkHttp3
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     //Logging Interceptor

@@ -11,9 +11,9 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object UseCaseModule {
-    @Provides
-    fun provideUseCase(productsRepo: ProductsRepo): GetUpdatedProductsUseCase{
-        return GetUpdatedProductsUseCase(productsRepo)
-
-    }
+//    @Provides
+//    fun provideUseCase(productsRepo: ProductsRepo): GetUpdatedProductsUseCase{
+//        return GetUpdatedProductsUseCase(productsRepo)
+//
+//    }
 }

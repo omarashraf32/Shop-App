@@ -21,11 +21,11 @@ class ProductsListViewModel @Inject constructor(private val getProductUseCase: G
         fun getProduct(){
             viewModelScope.launch {
                 try {
-                   _categories.value = getProductUseCase()
+                    val response = getProductUseCase.execute()
+                   _categories.emit(response)
                 }catch (e: Exception){
                     Log.d("ProductViewModel",e.message.toString())
                 }
-
             }
         }
 }

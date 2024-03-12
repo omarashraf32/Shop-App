@@ -1,8 +1,9 @@
 package com.example.domain.usecase
 
 import com.example.domain.repo.ProductsRepo
+import javax.inject.Inject
 
-class GetUpdatedProductsUseCase(private val productRepo: ProductsRepo){
-    suspend  operator fun  invoke() = productRepo.getProductFromRemote()
+class GetUpdatedProductsUseCase @Inject constructor(private val productRepo: ProductsRepo){
+    suspend  fun  execute() = productRepo.getProductFromRemote()
 
 }
