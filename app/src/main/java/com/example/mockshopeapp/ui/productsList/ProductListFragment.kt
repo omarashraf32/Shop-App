@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.model.CategoryResponse
 import com.example.mockshopeapp.databinding.FragmentProductListBinding
 import com.example.mockshopeapp.ui.Adapter.ProductAdapter
@@ -15,11 +16,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProductListFragment : Fragment(),ProductAdapter.onItemClickListener {
+class ProductListFragment : Fragment(), ProductAdapter.OnItemClickListener {
 
     private var _binding: FragmentProductListBinding? = null
     private val binding get() = _binding!!
-    private val productAdapter = ProductAdapter()
+    private val productAdapter = ProductAdapter(this)
     private lateinit var viewModel: ProductsListViewModel
     private val jokeList: List<CategoryResponse> = listOf(CategoryResponse())
 
@@ -35,17 +36,27 @@ class ProductListFragment : Fragment(),ProductAdapter.onItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
         setupLiveDataObservers()
+        setupRecyclerView()
+        fetchData()
     }
+
+    private fun setupRecyclerView() {
+        binding.productRecycler.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = productAdapter
+        }
+    }
+
+
+    private fun fetchData() = viewModel.getProduct()
 
     private fun setupLiveDataObservers() {
 
         lifecycleScope.launch {
-            viewModel.categories.collect{
+            viewModel.categories.collect {
                 productAdapter.submitList(it)
-                binding.productRecycler.adapter = productAdapter
             }
         }
-        viewModel.getProduct()
     }
 
     private fun initViewModel() {
