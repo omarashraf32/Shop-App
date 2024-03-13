@@ -5,7 +5,11 @@ buildscript {
     }
     dependencies {
         val nav_version = "2.7.5"
+        //noinspection GradleDependency
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
+        //noinspection GradleDependency
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7")
+
     }
 }
 plugins {

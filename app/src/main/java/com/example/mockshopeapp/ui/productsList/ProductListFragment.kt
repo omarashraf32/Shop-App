@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.model.CategoryResponse
+import com.example.mockshopeapp.R
 import com.example.mockshopeapp.databinding.FragmentProductListBinding
 import com.example.mockshopeapp.ui.Adapter.ProductAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -62,6 +64,7 @@ class ProductListFragment : Fragment(), ProductAdapter.OnItemClickListener {
     }
 
     override fun onItemClickListener(position: Int) {
-        Toast.makeText(requireContext(), "Click", Toast.LENGTH_SHORT).show()
+       val sendData = ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment()
+        view?.let { Navigation.findNavController(it).navigate(sendData) }
     }
 }

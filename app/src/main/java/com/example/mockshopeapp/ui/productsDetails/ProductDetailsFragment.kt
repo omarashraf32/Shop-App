@@ -14,6 +14,7 @@ class ProductDetailsFragment : Fragment() {
 
     private var _binding: FragmentProductDetailsBinding? = null
     private val binding get() = _binding!!
+    val args: ProductDetailsFragmentArgs
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -24,6 +25,10 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        binding.categoryTitleTv.text = view.findViewById(R.id.category_title_tv)
+
 
     }
 
