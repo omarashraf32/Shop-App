@@ -22,8 +22,6 @@ class ProductListFragment : Fragment(), ProductAdapter.OnItemClickListener {
     private val binding get() = _binding!!
     private val productAdapter = ProductAdapter(this)
     private lateinit var viewModel: ProductsListViewModel
-    private val jokeList: List<CategoryResponse> = listOf(CategoryResponse())
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
