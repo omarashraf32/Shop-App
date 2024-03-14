@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.model.CategoryResponse
+import com.example.domain.model.CategoryResponseItem
 import com.example.mockshopeapp.R
 import com.example.mockshopeapp.databinding.FragmentProductListBinding
 import com.example.mockshopeapp.ui.Adapter.ProductAdapter
@@ -63,8 +64,8 @@ class ProductListFragment : Fragment(), ProductAdapter.OnItemClickListener {
         viewModel = ViewModelProvider(this)[ProductsListViewModel::class.java]
     }
 
-    override fun onItemClickListener(position: Int) {
-       val sendData = ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment()
+    override fun onItemClickListener(categoryResponse: CategoryResponseItem) {
+       val sendData = ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment(categoryResponse.title)
         view?.let { Navigation.findNavController(it).navigate(sendData) }
     }
 }

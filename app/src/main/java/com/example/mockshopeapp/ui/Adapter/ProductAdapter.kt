@@ -14,7 +14,7 @@ class ProductAdapter(private val onItemClicked: OnItemClickListener) :
 
 
     interface OnItemClickListener {
-        fun onItemClickListener(position: Int)
+        fun onItemClickListener(category: CategoryResponseItem)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

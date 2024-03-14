@@ -20,8 +20,9 @@
         android:id="@+id/productDetailsFragment"
         android:name="com.example.mockshopeapp.ui.productsDetails.ProductDetailsFragment"
         android:label="fragment_product_details"
-        tools:layout="@layout/fragment_product_details" />
+        tools:layout="@layout/fragment_product_details" >
     <argument
         android:name="product_title"
         app:argType="string" />
+    </fragment>
 </navigation>
