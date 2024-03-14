@@ -65,7 +65,9 @@ class ProductListFragment : Fragment(), ProductAdapter.OnItemClickListener {
     }
 
     override fun onItemClickListener(categoryResponse: CategoryResponseItem) {
-       val sendData = ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment(categoryResponse.title)
-        view?.let { Navigation.findNavController(it).navigate(sendData) }
+        categoryResponse.title?.let {title->
+            val sendData = ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment(title)
+            view?.let { Navigation.findNavController(it).navigate(sendData) }
+        }
     }
 }

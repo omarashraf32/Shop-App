@@ -27,17 +27,18 @@ class ProductAdapter(private val onItemClicked: OnItemClickListener) :
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val itemBinding: CategoryItemBinding, listener: OnItemClickListener) :
+    inner class ViewHolder(private val itemBinding: CategoryItemBinding, listener: OnItemClickListener) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(category: CategoryResponseItem) {
             itemBinding.categoryTitleTv.text = category.title
             itemBinding.categoryPriceTv.text = category.price.toString()
             Glide.with(itemBinding.root.context).load(category.image).into(itemBinding.categoryIv)
+
         }
 
         init {
             itemView.setOnClickListener {
-                listener.onItemClickListener(adapterPosition)
+                listener.onItemClickListener(currentList[adapterPosition])
             }
         }
     }
