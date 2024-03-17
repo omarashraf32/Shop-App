@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.data"
+    namespace = "com.omar.data"
     compileSdk = 34
 
     defaultConfig {
@@ -46,8 +46,8 @@ dependencies {
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     //coroutines
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     //Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.48")

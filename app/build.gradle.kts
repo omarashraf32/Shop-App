@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mockshopeapp"
+    namespace = "com.omar.storeApp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.mockshopeapp"
+        applicationId = "com.omar.storeApp"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -24,8 +24,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -36,7 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
@@ -51,11 +50,17 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-//Retrofit
+    //Splash Screen
+    implementation("androidx.core:core-splashscreen:1.0.1")
+
+    //Gif logo
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+
+    //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     //Gson
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.google.code.gson:gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.google.code.gson:gson:2.9.0")
     //Retrofit Interceptors + OkHttp3
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     //Logging Interceptor
@@ -69,16 +74,11 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
-    //Glide
-    implementation ("com.github.bumptech.glide:glide:4.13.0")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
-    // Navigation Component
-//    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-//    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation("io.coil-kt:coil:2.6.0")
 
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     implementation(project(":domain"))
     implementation(project(":data"))

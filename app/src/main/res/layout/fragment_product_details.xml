@@ -3,46 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "#8FB9DC"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.productsDetails.ProductDetailsFragment">
 
     <ImageView
-        android:id="@+id/category_iv"
+        android:id="@+id/img_product"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="8dp"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/category_title_tv"
+        android:id="@+id/tv_title"
         style="@style/TextAppearance.Material3.ActionBar.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#9F24B5"
         android:textAlignment="center"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/category_iv"
+        app:layout_constraintTop_toBottomOf="@id/img_product"
         android:text="@string/title" />
 
     <TextView
-        android:id="@+id/category_desc_tv"
+        android:id="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#9F24B5"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="@string/description" />
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"
         app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintTop_toBottomOf="@id/category_title_tv"
-        tools:text="@string/description" />
+        app:layout_constraintTop_toBottomOf="@id/tv_desc"
+        tools:text="" />
 
 
     <TextView
-        android:id="@+id/category_price_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        tools:text="@string/price" />
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#9F24B5"
         android:textAlignment="center"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/category_desc_tv"
-        tools:text="@string/price" />
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        tools:text="" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -51,20 +72,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/category_price_tv"
+        app:layout_constraintTop_toBottomOf="@id/tv_price"
         android:rating="3"
         android:backgroundTint="@color/black"
-        android:progressTint="#FFEB3B"
+        android:progressTint="#9C27B0"
         android:scaleX="0.6"
         android:scaleY="0.6"
         />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit_rating"
-        android:textColor="@color/white"
-        android:backgroundTint="#9F24B5"
+        android:text="@string/rating"
+        android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ratingBar"
